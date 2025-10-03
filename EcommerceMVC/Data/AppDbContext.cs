@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EcommerceMVC.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace EcommerceMVC.Data
 {
@@ -9,5 +10,12 @@ namespace EcommerceMVC.Data
         {
 
         }
+
+        //DbSet da de alta las entidades cuando se crea una migracion
+        public DbSet<Product> Products { get; set; }
+        public DbSet<Category> Categories { get; set; }
+        public DbSet<Brand> Brands { get; set; }
+
+
     }
 }
