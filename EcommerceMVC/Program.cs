@@ -1,4 +1,6 @@
 using EcommerceMVC.Data;
+using EcommerceMVC.Services.Implementations;
+using EcommerceMVC.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -10,7 +12,10 @@ var connection = builder.Configuration.GetConnectionString("DefaultConnection") 
 builder.Services.AddDbContext<AppDbContext>(options => options.UseSqlServer(connection));
 
 // Add services to the container.
-builder.Services.AddControllersWithViews();
+builder.Services.AddControllersWithViews()
+#region Services
+    builder.Services.AddScoped<ICategoryService, CategoryService>();
+#endregion
 
 var app = builder.Build();
 
