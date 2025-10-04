@@ -1,4 +1,5 @@
 using System.Diagnostics;
+using EcommerceMVC.DTOS;
 using EcommerceMVC.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -15,12 +16,22 @@ namespace EcommerceMVC.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var dto = new RegistryDto
+            {
+                Active = true,
+                HighSystem = DateTime.Now,
+            };
+            return View(dto);
         }
 
         public IActionResult Privacy()
         {
-            return View();
+            var dto = new CategoryReadDto
+            {
+                Id = 1,
+                Name = "Electronica"
+            };
+            return View(dto);
         }
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

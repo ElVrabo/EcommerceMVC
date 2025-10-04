@@ -1,6 +1,12 @@
 ﻿@{
     ViewData["Title"] = "Privacy Policy";
 }
+@model EcommerceMVC.DTOS.CategoryReadDto
+
 <h1>@ViewData["Title"]</h1>
 
 <p>Use this page to detail your site's privacy policy.</p>
+<h1>@Html.DisplayNameFor(c => c.Id)</h1>
+<h1>@Html.DisplayFor(c => c.Id)</h1>
+<h1>@Html.DisplayNameFor(c => c.Name)</h1>
+<h1>@Html.DisplayFor(c => c.Name)</h1>

@@ -1,8 +1,14 @@
 ﻿@{
     ViewData["Title"] = "Home Page";
 }
+@model EcommerceMVC.DTOS.RegistryDto
 
 <div class="text-center">
     <h1 class="display-4">@ViewData["Title"]</h1>
+
+    <!-- DisplayNameFor muestra el nombre de la propiedad en la vista -->
+    <h1>@Html.DisplayNameFor(m => m.Active)</h1>
+    <!-- DisplayFor Muestra el valor de la propiedad -->
+    <h1>@Html.DisplayFor(m => m.Active)</h1>
     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
 </div>
